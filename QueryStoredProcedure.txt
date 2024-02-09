@@ -1,0 +1,46 @@
+STORED PROCEDURE
+
+1)
+
+CREATE PROCEDURE GetVerbaliAnno
+	@Anno int
+AS
+BEGIN
+	SET NOCOUNT ON;
+    SELECT *
+    FROM
+        [dbo].[Verbale] as v
+	JOIN dbo.Violazione as vio on vio.IDViolazione = v.IDViolazione
+    WHERE
+        YEAR([DataViolazione]) = @Anno;
+END
+GO
+
+
+2)
+
+CREATE PROCEDURE GetVerbaliData
+	@DataQ date
+AS
+BEGIN
+	SET NOCOUNT ON;
+	SELECT DataViolazione, sum(DecurtamentoPunti) as TotPunti
+  FROM [dbo].[Verbale]
+  group by DataViolazione 
+  having DataViolazione = @DataQ
+END
+GO
+
+
+3)
+
+CREATE PROCEDURE DeleteVerbale
+	@IDVerbQ int
+AS
+BEGIN
+	SET NOCOUNT ON;
+	DELETE FROM [dbo].[Verbale]
+        WHERE IDVerbale=@IDVerbQ
+END
+GO
+

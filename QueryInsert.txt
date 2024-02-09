@@ -1,0 +1,98 @@
+1)
+
+query insert values in dbo.Anagrafica
+
+USE [PoliziaMunicipale]
+GO
+
+INSERT INTO [dbo].[Anagrafica]
+           ([Cognome]
+           ,[Nome]
+           ,[Indirizzo]
+           ,[Citta]
+           ,[CAP]
+           ,[Cod_Fisc])
+VALUES
+    ('Rossi', 'Mario', 'Via Roma 1', 'Roma', '00100', 'RSSMRA80A01H501Z'),
+    ('Bianchi', 'Laura', 'Via Milano 2', 'Milano', '20100', 'BNCLRA75B42H501Y'),
+    ('Verdi', 'Luigi', 'Corso Napoli 3', 'Napoli', '80100', 'VRDLUG70C10H501X'),
+    ('Ferrari', 'Giovanna', 'Largo Torino 4', 'Torino', '10100', 'FRRGVA82D25H501W'),
+    ('Ricci', 'Roberto', 'Piazza Bologna 5', 'Bologna', '40100', 'RCCRTB75M11H501V'),
+    ('Conti', 'Elena', 'Viale Firenze 6', 'Firenze', '50100', 'CNTLNA88E02H501U'),
+    ('Marini', 'Antonio', 'Via Venezia 7', 'Venezia', '30100', 'MRNNTN90F15H501T'),
+    ('Mancini', 'Francesca', 'Corso Palermo 8', 'Palermo', '90100', 'MNCFNC87R03H501S'),
+    ('Galli', 'Paolo', 'Piazza Genova 9', 'Genova', '16100', 'GLLPLA78S20H501R'),
+    ('Rizzo', 'Caterina', 'Lungomare Catania 10', 'Catania', '95100', 'RZZCTR85C05H501Q'),
+    ('Caruso', 'Alessia', 'Via Turin 11', 'Turin', '10100', 'CRSLSS90M01H501P'),
+    ('Santoro', 'Giuseppe', 'Via Napoli 12', 'Napoli', '80100', 'SNTRGP85L20H501N'),
+    ('Farina', 'Anna', 'Piazza Milano 13', 'Milano', '20100', 'FRNNNA88C10H501M'),
+    ('Barbieri', 'Marco', 'Corso Roma 14', 'Roma', '00100', 'BRBRMR89A02H501L'),
+    ('Fabbri', 'Elena', 'Viale Palermo 15', 'Palermo', '90100', 'FBBRLN91R12H501K'),
+    ('Rinaldi', 'Luca', 'Largo Venezia 16', 'Venezia', '30100', 'RNLDCU92P25H501J'),
+    ('Ferri', 'Simona', 'Via Genova 17', 'Genova', '16100', 'FRRSMN93C04H501I'),
+    ('Greco', 'Massimo', 'Piazza Firenze 18', 'Firenze', '50100', 'GRCMSM94A20H501H'),
+    ('Colombo', 'Valentina', 'Lungomare Bologna 19', 'Bologna', '40100', 'CLMVLN95B07H501G'),
+    ('Marchetti', 'Giorgio', 'Via Torino 20', 'Torino', '10100', 'MRCHGG96D10H501F');
+GO
+
+
+2)
+
+query insert values in dbo.Violazione
+
+
+USE [PoliziaMunicipale]
+GO
+
+INSERT INTO [dbo].[Violazione]
+           ([Descrizione])
+     VALUES
+              ('Eccesso di velocità'),
+    ('Mancato rispetto del semaforo'),
+    ('Guida senza cintura di sicurezza'),
+    ('Utilizzo del telefono mentre si guida'),
+    ('Sosta vietata'),
+    ('Guida in stato di ebbrezza'),
+    ('Attraversamento pedonale non rispettato'),
+    ('Manovra pericolosa'),
+    ('Veicolo non assicurato'),
+    ('Guida senza patente'),
+    ('Occupazione abusiva di suolo pubblico'),
+    ('Inquinamento acustico');
+
+GO
+
+3)
+
+query insert values in dbo.Anagrafica
+
+USE [PoliziaMunicipale]
+GO
+
+-- Inserisci 15 righe di dati nella tabella "Verbale"
+INSERT INTO [dbo].[Verbale]
+           ([DataViolazione]
+           ,[IndirizzoViolazione]
+           ,[Nominativo_Agente]
+           ,[DataTrascrizioneVerbale]
+           ,[Importo]
+           ,[DecurtamentoPunti]
+           ,[IDAnagrafica]
+           ,[IDViolazione])
+VALUES
+    ('2024-02-09', 'Via Roma 1', 'Agente1', '2024-02-10', 100.50, 2, 1, 5),
+    ('2024-02-10', 'Via Milano 2', 'Agente2', '2024-02-11', 75.25, 1, 6, 7),
+    ('2024-02-11', 'Corso Napoli 3', 'Agente3', '2024-02-12', 120.75, 3, 12, 1),
+    ('2024-02-12', 'Largo Torino 4', 'Agente4', '2024-02-13', 90.00, 2, 14, 3),
+    ('2024-02-13', 'Piazza Bologna 5', 'Agente5', '2024-02-14', 110.25, 11, 5, 1),
+    ('2024-02-14', 'Viale Firenze 6', 'Agente6', '2024-02-15', 80.50, 3, 9, 3),
+    ('2024-02-15', 'Via Venezia 7', 'Agente7', '2024-02-16', 95.75, 2, 3, 5),
+    ('2024-02-16', 'Corso Palermo 8', 'Agente8', '2024-02-17', 70.25, 1, 7, 4),
+    ('2024-02-17', 'Piazza Genova 9', 'Agente9', '2024-02-18', 115.00, 3, 16, 4),
+    ('2024-02-18', 'Lungomare Catania 10', 'Agente10', '2024-02-19', 85.75, 2, 2, 8),
+    ('2024-02-19', 'Via Turin 11', 'Agente11', '2024-02-20', 105.25, 1, 1, 9),
+    ('2024-02-20', 'Via Napoli 12', 'Agente12', '2024-02-21', 95.50, 3, 15, 4),
+    ('2024-02-21', 'Piazza Milano 13', 'Agente13', '2024-02-22', 75.00, 2, 5, 1),
+    ('2024-02-22', 'Corso Roma 14', 'Agente14', '2024-02-23', 110.75, 1, 9, 7),
+    ('2024-02-23', 'Viale Palermo 15', 'Agente15', '2024-02-24', 88.25, 3, 16, 3);
+GO
